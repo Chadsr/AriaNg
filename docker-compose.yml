@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    caddy-ariang:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: caddy-ariang
+        container_name: caddy-ariang
+        restart: unless-stopped
+        ports:
+            - 8080:80
+        volumes:
+            - ./Caddyfile:/etc/caddy/Caddyfile:ro
+            - caddy_data:/data
+            - caddy_config:/config
+
+volumes:
+    caddy_data:
+    caddy_config:

@@ -1,0 +1,5 @@
+localhost:80 {
+    encode gzip
+    root * /var/www/html/ariang
+    file_server
+}
